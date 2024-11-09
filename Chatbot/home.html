@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Chatbot Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body{
+        background-image: url(image/c.png);
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+    .container{
+        /* border: 2px solid wheat; */
+        width: 100%;
+        height: 710px;;
+    }
+    .drop-zone{
+      /* position: absolute; */
+      /* border: 10px solid blue; */
+      width: 36%;
+    }
+    .drop-zone img{
+        width: 100px;
+        position: absolute;
+        margin-left: -200px;
+    }
+    .preview-container{
+        /* border: 2px solid white; */
+        position: absolute;
+        width: 60%;
+        height: 700px;;
+        margin-left: 599px;;
+        margin-top: -160px;
+    }
+    .preview-container h2{
+        margin-left: 400px;
+        margin-top: -2px;
+        color:white;
+        font-style: unset;
+        animation: animate 1s ease-in-out infinite alternate;
+       
+        font-size: 65px;
+    }
+    @keyframes animate {
+        form{
+            text-shadow: 0 0 20px #289aab;
+        }
+        to{
+            text-shadow: 0 0 30px #289aab,0 0 10px #289aab;
+        }
+        
+    }
+    .pdf-preview{
+        height: 550px;
+        /* border: 2px solid blue; */
+        /* background: rgba(255, 255, 255, 0.3); */
+    }
+    .input-container{
+        width: 40%;
+    }
+    .output-container{
+        margin-top: 20px;
+        /* border: 2px solid black; */
+        width:39%;
+    }
+    .output-panel{
+        border: 2px solid red;
+    }
+</style>
+<body>
+
+    <div class="container">
+        <div class="upload-container">
+            <h2>Upload PDF</h2>
+            <div class="drop-zone" id="drop-zone">
+                <img src="image/pdfLogo.png">
+                <p>Drag & Drop PDF File Here</p>
+            </div>
+        </div>
+        <div class="preview-container">
+            <h2>Preview</h2>
+            <div class="pdf-preview" id="pdf-preview">
+                <!-- PDF preview will be displayed here -->
+            </div>
+        </div>
+        <div class="input-container">
+            <h2>Chatbot</h2>
+            <textarea id="user-input" placeholder="Type your questions here..."></textarea>
+            <button onclick="submitQuestion()">Submit</button>
+        </div>
+        <div class="output-container">
+            <h2>Answers</h2>
+            <div id="output-panel">
+                <!-- Chatbot answers will be displayed here -->
+            </div>
+           
+           
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
